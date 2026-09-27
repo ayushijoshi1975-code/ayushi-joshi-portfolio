@@ -367,8 +367,6 @@ img { display: block; max-width: 100%; }
 .peer-quotes figcaption { font-size: 14px; }
 .peer-quotes figcaption strong { font-weight: 500; }
 .peer-link { display: inline-flex; align-items: center; gap: 18px; margin: 30px 0 0 28px; padding-bottom: 3px; border-bottom: 1px solid currentColor; font-weight: 600; }
-.peer-link-standalone { display: flex; justify-content: space-between; margin: 0; padding: 20px 24px; border: 1px solid var(--line); border-bottom: 1px solid var(--line); border-radius: 14px; font-size: 16px; font-weight: 700; }
-.peer-link-standalone:hover { background: var(--wash); }
 .contact-panel { margin-top: 22px; padding: 40px 46px 24px; border-radius: 16px; color: #fff; background: #17213c; }
 .contact-header h2 { margin: 0; font-size: 44px; font-family: var(--archivo); letter-spacing: -.04em; }
 .contact-header p { margin: 10px 0 0; max-width: 640px; color: #d7dce8; font-size: 16px; }
