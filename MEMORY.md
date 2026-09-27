@@ -1,6 +1,19 @@
 # Project Memory — Ayushi Portfolio
 
-Snapshot date: 2026-09-28 (second pass)
+Snapshot date: 2026-09-28 (third pass)
+
+## Hero crop fix, real stats, services carousel, verified links — September 28 (third pass)
+
+- **Open item, needs Ayushi's input**: the two named LinkedIn recommendation quotes in `.peer-quotes` were removed (Gregory P./"consulting client" and Gaurav S./Convosight). Ayushi confirmed the Gaurav+Convosight pairing was wrong, and neither name appears anywhere in her CV, the CV-onepage master data, or her `mycareer` job-search repo, so nothing could be verified independently (LinkedIn itself sits behind an auth wall for unauthenticated/non-logged-in fetches). The section currently shows only a link to her real LinkedIn recommendations page. **Restore real quotes once she supplies the correct name/company/quote pairs** — do not re-guess.
+- Root-caused and fixed the hero image/text clipping: the desktop (`>1120px`) `.hero` rule had a hardcoded `height: 390px; overflow: hidden`, sized for the original (shorter) hero copy. After the second-pass hero rewrite added more copy, the row's actual content height (~435px) exceeded the fixed box, and `overflow:hidden` silently clipped ~90px off the bottom of both the portrait image and the third hero-point's text. The tablet/mobile breakpoints already used `height:auto` and were unaffected. Fix: dropped the fixed height on the base rule (now `min-height` only, `.hero-portrait` uses `align-self:stretch`/`min-height` instead of a fixed height), so the box always grows to fit its content. If the hero copy changes again, re-check this at a wide (>1120px) viewport specifically — the bug is invisible below that breakpoint.
+- Hero point 2 no longer repeats "AEO/GEO" (point 1 already covers SEO/AEO/GEO); it's now scoped purely to the AI automation stack.
+- Top proof-grid stats changed from (23% revenue growth / +18% MQL / 13 LinkedIn recommendations) to (80+ hrs/month automated / #1 on Google x2 sites, SEO·AEO·GEO·AIO / 23% revenue growth, Convosight · 50+ brands) to better match an AI-automation/performance-marketing pitch. The dropped +18% MQL stat still lives in the expertise band ("Measure & improve"); the "13 recommendations" count still lives as the standalone LinkedIn link.
+- Dily's featured card now uses a real asset: `assets/work-dily.svg`, a genuine product-dashboard screenshot pulled from dily.pro's own `/images/recuriter-ss.svg`, with `assets/dily-wordmark.svg` (dily.pro's real white logo) as the badge overlay. No more fabricated/text-only cover for Dily.
+- Added real, verified live links: plombier16.com (in the Plombier 16 dialog, alongside the existing Drive action-plan link), convosight.com (in the Convosight dialog, alongside the LinkedIn-context link), wemoove-tv.tech (new `.career-site-link` on the WEMOOVE experience row, since WEMOOVE has no dialog of its own).
+- Language switch moved to the very end of the header nav (after the Contact button), in both desktop and mobile menus, per Ayushi's request for it to sit at the top-right-most position.
+- Added a "Services" section: an infinite auto-scrolling marquee (`.services-marquee`/`.marquee-track`, pure CSS `@keyframes`, pauses on hover, disabled under `prefers-reduced-motion`) listing 10 services — performance marketing, SEO/AEO/GEO, AI automation, GTM strategy, product marketing, demand gen/outbound, e-commerce/Shopify, analytics/KPI, CRO, brand launch — placed between the hero/proof stats and Featured work.
+- "Marketing & Growth Consultant (Freelance)" is now "(Independent Practice)" throughout (career-list heading + FR translation).
+- Local git history intact; this pass is commit `4de8867`.
 
 ## Language switch, keyword pass, contact form, CV refresh — September 28 (second pass)
 
