@@ -2,7 +2,7 @@
   const root = document.documentElement;
   const translationNodes = [...document.querySelectorAll('[data-fr]')];
   const ariaTranslationNodes = [...document.querySelectorAll('[data-fr-aria]')];
-  const languageButtons = [...document.querySelectorAll('[data-language]')];
+  const languageButtons = [...document.querySelectorAll('[data-lang]')];
   const cvLink = document.querySelector('[data-cv-link]');
   const menuButton = document.querySelector('.menu-button');
   const mobileMenu = document.querySelector('#mobile-menu');
@@ -47,8 +47,7 @@
     });
 
     languageButtons.forEach((button) => {
-      button.setAttribute('aria-label', isFrench ? 'Passer en anglais' : 'Switch to French');
-      button.setAttribute('title', isFrench ? 'Passer en anglais' : 'Switch to French');
+      button.setAttribute('aria-current', button.dataset.lang === language ? 'true' : 'false');
     });
 
     if (cvLink) {
@@ -59,7 +58,7 @@
   }
 
   languageButtons.forEach((button) => {
-    button.addEventListener('click', () => applyLanguage(root.lang === 'fr' ? 'en' : 'fr'));
+    button.addEventListener('click', () => applyLanguage(button.dataset.lang));
   });
 
   applyLanguage(readLanguage());
@@ -155,4 +154,18 @@
 
   const year = document.querySelector('#year');
   if (year) year.textContent = new Date().getFullYear();
+
+  const contactForm = document.querySelector('#contact-form');
+  const contactFormNote = document.querySelector('#contact-form-note');
+  contactForm?.addEventListener('submit', (event) => {
+    event.preventDefault();
+    const data = new FormData(contactForm);
+    const name = (data.get('name') || '').toString().trim();
+    const email = (data.get('email') || '').toString().trim();
+    const message = (data.get('message') || '').toString().trim();
+    const subject = encodeURIComponent(`Portfolio contact from ${name}`);
+    const body = encodeURIComponent(`${message}\n\nFrom: ${name} (${email})`);
+    window.location.href = `mailto:Ayushi.joshi1975@gmail.com?subject=${subject}&body=${body}`;
+    if (contactFormNote) contactFormNote.hidden = false;
+  });
 })();
