@@ -1,6 +1,22 @@
 # Project Memory — Ayushi Portfolio
 
-Snapshot date: 2026-09-06
+Snapshot date: 2026-09-28
+
+## Reorder, new case studies and public hosting — September 28
+
+- Published to GitHub Pages: https://ayushijoshi1975-code.github.io/ayushi-joshi-portfolio/ (repo `ayushijoshi1975-code/ayushi-joshi-portfolio`, public, served from `main` via the legacy Pages build). Any push to `main` redeploys within about a minute. Local git history from the September 6 session was not carried over (that repo was not in this handoff copy); this repo starts fresh at commit `5357d70`.
+- Featured work now leads with the current freelance clients, per Ayushi's explicit instruction: **Snap Engineering, Form Folly, Dily** (in that order — Snap and Form Folly are two brands of the same US client group; Dily is a separate France-based client). Didomi, Plombier 16 and Convosight moved to a new "More case studies" secondary grid directly below, keeping their existing dialogs, images and Drive links untouched.
+- New case dialogs added: `case-snap`, `case-formfolly`, `case-dily`. Content sourced from the CV (`Ayushi_Joshi_CV_EN.pdf`) and from `/Users/neerajoshi/Desktop/mycareer/build-cv-onepage.mjs` (Ayushi's separate job-application repo, referred to as "career-ops" — it holds the vetted bilingual EN/FR CV bullet copy this session reused for accuracy; it does not contain additional case-study narrative beyond the CV).
+- New cover art, grounded in real source material (no fabricated screenshots):
+  - `assets/work-snap.webp` — Snap Engineering's own live hero photo (downloaded from snapengineering.io), with `assets/snap-wordmark.svg` (their real logo, downloaded from the same site) overlaid via the new `.cover-badge` CSS treatment.
+  - `assets/work-formfolly.png` — the real `formfolly-social-share-1200x628.png` asset from the client's Drive folder (already carries the Form Folly logo).
+  - Dily has no public site yet (pre-launch); its card uses a text-only `.project-cover-text` treatment (navy gradient, "DILY" wordmark, "350–400 companies reached/month" stat) rather than an invented screenshot.
+  - New CSS added near the end of `assets/styles.css`: `.project-cover`, `.cover-badge`, `.project-cover-text`, `.cover-eyebrow/.cover-headline/.cover-stat`, `.more-work-heading/.more-work-grid`, `.career-subs`.
+- Experience timeline rebuilt to match the current CV: current role is now **Marketing & Growth Consultant (Freelance), Feb 2026–Present**, with Snap Engineering / Form Folly / Dily as sub-items (buttons opening their dialogs, class `.career-subs`) under it. Plombier 16 is now a past role (May–Aug 2026, ended), not "current" — the `current-indicator` moved to the Freelance row.
+- Expertise band evidence links refreshed: "Position & GTM" now points to Form Folly (0-to-1 launch) and "Acquire" now points to Snap Engineering (#1 organic ranking), replacing Didomi/Plombier there; "Measure & improve" still points to WEMOOVE (unchanged, strongest quantified conversion-lift proof).
+- Archive list: removed the old "Form Folly" and "Snap Engineering" rows (now full featured cases, would be duplicates); added **Publicis France** (automation proposal) and **Sonepar** (AI growth strategy), both found in the "Business Consulting" Drive subfolder, both dated 2026-09-25 — the two newest consulting samples in the source Drive at the time of this session. The Dily.pro pre-launch audit PDF link moved from the archive into the new Dily dialog as a secondary link.
+- Source-of-truth Drive folder is public/view-only without sign-in: https://drive.google.com/drive/folders/1aeCvpgu6hx4w1sfvau4HrA9kHy4XatlQ, with subfolders Brand Collaborations, Business Consulting, Case Studies/Projects, Email Marketing Results, Form Folly. Only a subset of files there are linked from the site; the rest (e.g. individual brand-collab decks like Pillsbury, Nerolac, Johnson, Atrevia) were not added to keep the archive scannable — pull further file IDs the same way if Ayushi wants more added (open the file in Drive, read `iframe[src*=drivesharing/clientmodel]` or an image's `lh3.googleusercontent.com/.../d/<ID>=...` src via JS to get the real Drive file ID, then use `drive.google.com/file/d/<ID>/view`).
+- Not done: no custom domain configured (using the default `github.io` URL); no favicon beyond the browser default; the old September 6 audit/QA evidence in `audit/` was left as historical record and not refreshed for this pass since the locked hero/Featured-work visuals it documents were not touched.
 
 ## Current design and handoff — September 6
 
