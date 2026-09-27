@@ -1,6 +1,18 @@
 # Project Memory — Ayushi Portfolio
 
-Snapshot date: 2026-09-28
+Snapshot date: 2026-09-28 (second pass)
+
+## Language switch, keyword pass, contact form, CV refresh — September 28 (second pass)
+
+- Language control changed from a single EN/FR toggle button to two explicit buttons (`data-lang="en"`/`"fr"` inside `.language-switch`), per Ayushi's request. `script.js` now selects `[data-lang]` and sets `aria-current` on the matching button instead of swapping one button's label.
+- Both CV PDFs were stale and have been replaced. They previously used a completely different template/content (no Snap Engineering, Form Folly, Dily, current Plombier dates) and the FR one was not even a real French CV. Fresh ones were generated from Ayushi's own CV tooling at `/Users/neerajoshi/Desktop/mycareer/build-cv-onepage.mjs` (the "career-ops" repo referenced in the prior session): `node build-cv-onepage.mjs en|fr` then `node generate-pdf.mjs output/cv-onepage-<lang>.html output/Ayushi_Joshi_CV_<LANG>_fresh.pdf --format=a4` (must use `--format=a4`, not the default `letter`, or the EN build spills a few lines onto a second page). Output copied into this project's `assets/`. If the CV needs updating again, regenerate the same way rather than hand-editing the PDF — the master EN/FR data lives in that script's `EN`/`FR` objects (lines ~35-167), not in this repo.
+- Em dashes removed from all visible copy. "Company — Tagline" patterns became "Company: Tagline"; date ranges ("Feb 2026 —") became plain hyphens ("Feb 2026 -"). While doing this, fixed three pre-existing bugs where Didomi/Plombier/Convosight's `project-title` spans and all six dialog `<h2>` titles had no `data-fr`, so they silently stayed in English in French mode — now translated.
+- Removed all "open to CDI" / "selective freelance" availability language (hero point 2, contact section) per explicit instruction — the site no longer states availability/contract-type preferences anywhere.
+- Hero rewritten for growth/performance-marketing keyword density: H1 is now "Growth & Performance Marketer" (was "Product & Growth Marketer"); one hero point is dedicated to AI marketing automation + AEO/GEO/AIO visibility ("two websites ranked #1 on Google, including inside AI-generated answers"). Keyword pass also touched the expertise band, profile bio, and meta title/description.
+- New contact section (`#contact`) replaces the old CDI-first block: a real `<form id="contact-form">` (Name/Email/Message) that builds a `mailto:` link with prefilled subject/body on submit (no backend — this is a static site, per AGENTS.md), a prominent Calendly "Book a call" button (`https://calendly.com/ayushi-joshi1975/introduction-meeting-1?utm_source=schedule_from_linkedin`), plus email/LinkedIn/phone/location. Old `.contact-main/.contact-primary/.contact-details` CSS removed; new `.contact-header/.contact-grid/.contact-form/.contact-side` added.
+- Snap Engineering case rewritten in first person per Ayushi's correction: she personally runs their Google Ads and Meta Ads and personally took organic search to #1 (previously read as if the site "reached" #1 passively, without crediting the paid-ads work).
+- Form Folly case rewritten to explicitly enumerate every task done singlehandedly: naming the brand, visual identity/logo design, product catalogue, Shopify storefront + pricing, blog/content engine, and social media marketing — all solo, start to finish.
+- Local git history from the first pass (`5357d70` etc.) is intact in this repo; this pass is commit `9ae3941`.
 
 ## Reorder, new case studies and public hosting — September 28
 
