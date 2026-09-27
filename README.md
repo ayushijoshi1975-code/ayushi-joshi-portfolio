@@ -1,6 +1,8 @@
 # Ayushi Joshi — portfolio site
 
-A static, responsive one-page portfolio. There is no build step, framework, or package install.
+Live: https://ayushijoshi1975-code.github.io/ayushi-joshi-portfolio/
+
+A static, responsive one-page portfolio. There is no build step, framework, or package install. Published via GitHub Pages from the `main` branch — any push to `main` updates the live site within about a minute.
 
 ## Run locally
 
