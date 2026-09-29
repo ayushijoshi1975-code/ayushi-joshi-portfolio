@@ -432,6 +432,44 @@ img { display: block; max-width: 100%; }
   .contact-footer { align-items: flex-start; flex-direction: column; gap: 14px; }
   .contact-footer > div { gap: 24px; font-size: 13px; }
 }
+/* What I Do tiles, Tools stack, wall entry links, contact QR — added 2026-09-29. */
+.do-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+.do-tile { position: relative; min-height: 168px; padding: 26px 24px; overflow: hidden; border: 1px solid var(--line); border-radius: 18px; background: #fff; cursor: default; }
+.do-face { display: flex; flex-direction: column; gap: 14px; }
+.do-face i { color: #bb8700; font-size: 30px; }
+.do-face h3 { margin: 0; font-family: var(--archivo); font-size: 19px; font-weight: 800; letter-spacing: -.02em; line-height: 1.15; }
+.do-detail { position: absolute; inset: 0; display: flex; align-items: center; padding: 24px; color: #f5f7fc; font-size: 14px; line-height: 1.5; background: var(--navy); opacity: 0; transform: translateY(8px); transition: opacity .22s ease, transform .22s ease; }
+.do-tile:hover .do-detail, .do-tile:focus-visible .do-detail, .do-tile:focus-within .do-detail { opacity: 1; transform: none; }
+.tools-section { margin-top: 46px; }
+.tools-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 28px 24px; margin-top: 22px; padding-top: 26px; border-top: 1px solid var(--line); }
+.tools-group h3 { margin: 0 0 12px; font-family: var(--archivo); font-size: 13px; font-weight: 800; letter-spacing: .04em; text-transform: uppercase; color: var(--muted); }
+.tools-group ul { display: flex; flex-wrap: wrap; gap: 7px; margin: 0; padding: 0; list-style: none; }
+.tools-group li { padding: 6px 12px; border: 1px solid var(--line); border-radius: 999px; background: var(--wash); font-size: 13px; font-weight: 600; color: var(--ink); }
+.wall-links { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 28px; }
+.wall-link { display: flex; align-items: center; gap: 18px; padding: 22px 26px; border-radius: 18px; color: #fff; transition: transform .2s ease; }
+.wall-link:hover { transform: translateY(-3px); }
+.wall-link-navy { background: var(--navy); }
+.wall-link-yellow { background: var(--ink); }
+.wall-link > i:first-child { font-size: 30px; color: var(--yellow); flex-shrink: 0; }
+.wall-link span { display: flex; flex: 1; flex-direction: column; gap: 4px; }
+.wall-link strong { font-family: var(--archivo); font-size: 17px; font-weight: 800; letter-spacing: -.02em; }
+.wall-link small { color: #c9cedb; font-size: 13px; }
+.wall-link-arrow { font-size: 20px; flex-shrink: 0; }
+.contact-qr { display: flex; align-items: center; gap: 12px; margin-top: 16px; padding-top: 16px; border-top: 1px solid #687083; }
+.contact-qr img { border-radius: 8px; background: #fff; padding: 4px; }
+.contact-qr span { font-size: 12px; color: #c9cedb; max-width: 90px; line-height: 1.3; }
+@media (max-width: 1120px) {
+  .do-grid { grid-template-columns: repeat(2, 1fr); }
+  .tools-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 640px) {
+  .do-grid { grid-template-columns: 1fr; }
+  .do-tile { min-height: 0; }
+  .do-detail { position: static; opacity: 1; transform: none; margin-top: 14px; padding: 16px; border-radius: 12px; }
+  .tools-grid { grid-template-columns: 1fr; gap: 24px; }
+  .wall-links { grid-template-columns: 1fr; }
+}
+
 /* New featured-work covers and current-role sub-list — added 2026-09-28. */
 .project-card > .project-cover { position: relative; aspect-ratio: 2 / 1; overflow: hidden; background: var(--navy); }
 .project-cover > img { width: 100%; height: 100%; object-fit: cover; }
